@@ -1,0 +1,14 @@
+<div>
+    <h3 class="p-2">Defer Demo</h3>
+</div>
+<div>
+    <app-if-else></app-if-else>
+</div>
+<div >
+    @defer {
+        <app-for></app-for>
+    }
+    @placeholder (minimum 4s) {
+        <h3 class="text-center">Loading...</h3>
+    }
+</div>

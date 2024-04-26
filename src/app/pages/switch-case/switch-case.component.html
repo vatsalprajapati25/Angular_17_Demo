@@ -1,0 +1,36 @@
+<div>
+    <h3 class="p-2 heading">Switch Case & Component Style Demo</h3>
+</div>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Occupation</th>
+            <th scope="col">City</th>
+            <th scope="col">Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of data; track $index) {
+        <tr>
+            <td class="text-center">{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.occupation}}</td>
+            <td>{{item.city}}</td>
+            <td> @switch (item.gender) {
+                @case ('male') {
+                    <span class="text-success">{{item.gender}}</span>
+                }    
+                @case ('female') {
+                    <span class="text-info">{{item.gender}}</span>
+                }
+                @default {
+                    <span class="text-danger">{{item.gender}}</span>
+                }
+            }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
